@@ -1,0 +1,155 @@
+INFO  [2017-08-22 15:42:21,037] org.eclipse.jetty.util.log: Logging initialized @1740ms
+INFO  [2017-08-22 15:42:21,153] io.dropwizard.server.ServerFactory: Starting ContactStoreApplication
+INFO  [2017-08-22 15:42:21,221] org.eclipse.jetty.setuid.SetUIDListener: Opened application@615eac87{HTTP/1.1}{0.0.0.0:7777}
+INFO  [2017-08-22 15:42:21,221] org.eclipse.jetty.setuid.SetUIDListener: Opened admin@e910502{HTTP/1.1}{0.0.0.0:7778}
+INFO  [2017-08-22 15:42:21,224] org.eclipse.jetty.server.Server: jetty-9.2.9.v20150224
+INFO  [2017-08-22 15:42:21,962] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    DELETE  /api.tws.com/v1/user/{userName}/contact (com.tws.contactstore.resource.ContactResource)
+    GET     /api.tws.com/v1/user/{userName}/contact (com.tws.contactstore.resource.ContactResource)
+    POST    /api.tws.com/v1/user/{userName}/contact (com.tws.contactstore.resource.ContactResource)
+    POST    /api.tws.com/v1/user/authenticate (com.tws.contactstore.resource.UserResource)
+    POST    /api.tws.com/v1/user/register (com.tws.contactstore.resource.UserResource)
+
+INFO  [2017-08-22 15:42:21,964] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@5bb2dc75{/,null,AVAILABLE}
+INFO  [2017-08-22 15:42:21,970] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+WARN  [2017-08-22 15:42:21,970] io.dropwizard.setup.AdminEnvironment: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2017-08-22 15:42:21,975] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@4c08da6f{/,null,AVAILABLE}
+INFO  [2017-08-22 15:42:21,980] org.eclipse.jetty.server.ServerConnector: Started application@615eac87{HTTP/1.1}{0.0.0.0:7777}
+INFO  [2017-08-22 15:42:21,981] org.eclipse.jetty.server.ServerConnector: Started admin@e910502{HTTP/1.1}{0.0.0.0:7778}
+INFO  [2017-08-22 15:42:21,982] org.eclipse.jetty.server.Server: Started @2687ms
+In Impl
+JSONContactArr[{"streetAddress":"street forth","lastName":"kumar","phone":"23232980","contactId":"1","email":"naveen@gmail.com","fullName":"Naveen kumar","notes":"met in the park","firstName":"Naveen"},{"streetAddress":"street forth","lastName":"warney","phone":"23232980","contactId":"2","email":"matt@gmail.com","fullName":"Matt warney","notes":"met in pub","firstName":"Matt"},{"streetAddress":"california North","lastName":"black","phone":"92372321321","contactId":"3","email":"matt.black@gmail.com","fullName":"matt black","notes":"met in conference","firstName":"matt"},{"streetAddress":"2ND STREET","lastName":"kelly","phone":"9739605605","contactId":"4","email":"naven88@gmail.com","fullName":"Richard kelly","notes":"copy","firstName":"Richard"},{"streetAddress":"2ND STREET","lastName":"kelly","phone":"9739605605","contactId":"5","email":"naven88@gmail.com","fullName":"Richard kelly","notes":"copy","firstName":"Richard"}]
+127.0.0.1 - - [22/Aug/2017:15:42:31 +0000] "GET /api.tws.com/v1/user/naveenkumar/contact?pretty HTTP/1.1" 200 - "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36" 294
+INFO  [2017-08-22 15:42:34,144] com.tws.contactstore.storage.ContactStoreDaoImpl: Contacts IDs : 5 Removed
+127.0.0.1 - - [22/Aug/2017:15:42:34 +0000] "DELETE /api.tws.com/v1/user/naveenkumar/contact HTTP/1.1" 200 20 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36" 28
+In Impl
+JSONContactArr[["Naveen","kumar","23232980","naveen@gmail.com","street forth","met in the park"],["Matt","warney","23232980","matt@gmail.com","street forth","met in pub"],["matt","black","92372321321","matt.black@gmail.com","california North","met in conference"],["Richard","kelly","9739605605","naven88@gmail.com","2ND STREET","copy"]]
+127.0.0.1 - - [22/Aug/2017:15:42:53 +0000] "GET /api.tws.com/v1/user/NAVEENKUMAR/contact?_=1503415264046 HTTP/1.1" 200 - "http://localhost:9090/ContactStoreWebApp/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36" 36
+127.0.0.1 - - [22/Aug/2017:15:44:09 +0000] "OPTIONS /api.tws.com/v1/user/authenticate HTTP/1.1" 200 13 "http://localhost:9090/ContactStoreWebApp/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36" 10
+Username: naveenkumar, password: naveen@123
+INFO  [2017-08-22 15:44:09,220] com.tws.contactstore.storage.ContactStoreDaoImpl: User naveenkumar Logged-In !
+Authenticate User: true
+127.0.0.1 - - [22/Aug/2017:15:44:09 +0000] "POST /api.tws.com/v1/user/authenticate HTTP/1.1" 200 4 "http://localhost:9090/ContactStoreWebApp/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36" 38
+In Impl
+JSONContactArr[["Naveen","kumar","23232980","naveen@gmail.com","street forth","met in the park"],["Matt","warney","23232980","matt@gmail.com","street forth","met in pub"],["matt","black","92372321321","matt.black@gmail.com","california North","met in conference"],["Richard","kelly","9739605605","naven88@gmail.com","2ND STREET","copy"]]
+127.0.0.1 - - [22/Aug/2017:15:44:09 +0000] "GET /api.tws.com/v1/user/NAVEENKUMAR/contact?_=1503416639738 HTTP/1.1" 200 - "http://localhost:9090/ContactStoreWebApp/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36" 47
+127.0.0.1 - - [22/Aug/2017:15:46:05 +0000] "OPTIONS /api.tws.com/v1/user/naveenkumar/contact HTTP/1.1" 200 32 "http://localhost:9090/ContactStoreWebApp/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36" 6
+INFO  [2017-08-22 15:46:05,536] com.tws.contactstore.storage.ContactStoreDaoImpl: For User: naveenkumar Contact:Levi is Addded !
+127.0.0.1 - - [22/Aug/2017:15:46:05 +0000] "POST /api.tws.com/v1/user/naveenkumar/contact HTTP/1.1" 200 18 "http://localhost:9090/ContactStoreWebApp/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36" 47
+In Impl
+JSONContactArr[["Naveen","kumar","23232980","naveen@gmail.com","street forth","met in the park"],["Matt","warney","23232980","matt@gmail.com","street forth","met in pub"],["matt","black","92372321321","matt.black@gmail.com","california North","met in conference"],["Richard","kelly","9739605605","naven88@gmail.com","2ND STREET","copy"],["Levi","Garner","9722232","levi@arbogold.com","michigan lake","friend"]]
+127.0.0.1 - - [22/Aug/2017:15:46:07 +0000] "GET /api.tws.com/v1/user/NAVEENKUMAR/contact?_=1503416639739 HTTP/1.1" 200 - "http://localhost:9090/ContactStoreWebApp/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36" 28
+In Impl
+JSONContactArr[{"streetAddress":"street forth","lastName":"kumar","phone":"23232980","contactId":"1","email":"naveen@gmail.com","fullName":"Naveen kumar","notes":"met in the park","firstName":"Naveen"},{"streetAddress":"street forth","lastName":"warney","phone":"23232980","contactId":"2","email":"matt@gmail.com","fullName":"Matt warney","notes":"met in pub","firstName":"Matt"},{"streetAddress":"california North","lastName":"black","phone":"92372321321","contactId":"3","email":"matt.black@gmail.com","fullName":"matt black","notes":"met in conference","firstName":"matt"},{"streetAddress":"2ND STREET","lastName":"kelly","phone":"9739605605","contactId":"4","email":"naven88@gmail.com","fullName":"Richard kelly","notes":"copy","firstName":"Richard"},{"streetAddress":"michigan lake","lastName":"Garner","phone":"9722232","contactId":"6","email":"levi@arbogold.com","fullName":"Levi Garner","notes":"friend","firstName":"Levi"}]
+127.0.0.1 - - [22/Aug/2017:15:46:12 +0000] "GET /api.tws.com/v1/user/naveenkumar/contact?pretty HTTP/1.1" 200 - "http://localhost:9090/ContactStoreWebApp/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36" 36
+In Impl
+JSONContactArr[["Naveen","kumar","23232980","naveen@gmail.com","street forth","met in the park"],["Matt","warney","23232980","matt@gmail.com","street forth","met in pub"],["matt","black","92372321321","matt.black@gmail.com","california North","met in conference"],["Richard","kelly","9739605605","naven88@gmail.com","2ND STREET","copy"],["Levi","Garner","9722232","levi@arbogold.com","michigan lake","friend"]]
+127.0.0.1 - - [22/Aug/2017:15:47:21 +0000] "GET /api.tws.com/v1/user/NAVEENKUMAR/contact?_=1503416639740 HTTP/1.1" 200 - "http://localhost:9090/ContactStoreWebApp/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36" 31
+In Impl
+JSONContactArr[["Naveen","kumar","23232980","naveen@gmail.com","street forth","met in the park"],["Matt","warney","23232980","matt@gmail.com","street forth","met in pub"],["matt","black","92372321321","matt.black@gmail.com","california North","met in conference"],["Richard","kelly","9739605605","naven88@gmail.com","2ND STREET","copy"],["Levi","Garner","9722232","levi@arbogold.com","michigan lake","friend"]]
+127.0.0.1 - - [22/Aug/2017:15:47:24 +0000] "GET /api.tws.com/v1/user/NAVEENKUMAR/contact?_=1503416843270 HTTP/1.1" 200 - "http://localhost:9090/ContactStoreWebApp/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36" 31
+In Impl
+JSONContactArr[{"streetAddress":"street forth","lastName":"kumar","phone":"23232980","contactId":"1","email":"naveen@gmail.com","fullName":"Naveen kumar","notes":"met in the park","firstName":"Naveen"},{"streetAddress":"street forth","lastName":"warney","phone":"23232980","contactId":"2","email":"matt@gmail.com","fullName":"Matt warney","notes":"met in pub","firstName":"Matt"},{"streetAddress":"california North","lastName":"black","phone":"92372321321","contactId":"3","email":"matt.black@gmail.com","fullName":"matt black","notes":"met in conference","firstName":"matt"},{"streetAddress":"2ND STREET","lastName":"kelly","phone":"9739605605","contactId":"4","email":"naven88@gmail.com","fullName":"Richard kelly","notes":"copy","firstName":"Richard"},{"streetAddress":"michigan lake","lastName":"Garner","phone":"9722232","contactId":"6","email":"levi@arbogold.com","fullName":"Levi Garner","notes":"friend","firstName":"Levi"}]
+127.0.0.1 - - [22/Aug/2017:15:47:27 +0000] "GET /api.tws.com/v1/user/naveenkumar/contact?pretty HTTP/1.1" 200 - "http://localhost:9090/ContactStoreWebApp/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36" 32
+127.0.0.1 - - [22/Aug/2017:15:47:36 +0000] "OPTIONS /api.tws.com/v1/user/function%20(response)%7B%20%20%20%20toaster.pop(%22failed%22,%20%22Selected%20Contacts%20Deleted%20!%22,%20%22%22,%201000,%20%22trustedHtml%22);%20%20%20%20%7D/contact HTTP/1.1" 200 32 "http://localhost:9090/ContactStoreWebApp/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36" 14
+INFO  [2017-08-22 15:47:36,505] com.tws.contactstore.storage.ContactStoreDaoImpl: Contacts IDs : 6 Removed
+127.0.0.1 - - [22/Aug/2017:15:47:36 +0000] "DELETE /api.tws.com/v1/user/function%20(response)%7B%20%20%20%20toaster.pop(%22failed%22,%20%22Selected%20Contacts%20Deleted%20!%22,%20%22%22,%201000,%20%22trustedHtml%22);%20%20%20%20%7D/contact HTTP/1.1" 200 20 "http://localhost:9090/ContactStoreWebApp/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36" 21
+In Impl
+JSONContactArr[["Naveen","kumar","23232980","naveen@gmail.com","street forth","met in the park"],["Matt","warney","23232980","matt@gmail.com","street forth","met in pub"],["matt","black","92372321321","matt.black@gmail.com","california North","met in conference"],["Richard","kelly","9739605605","naven88@gmail.com","2ND STREET","copy"]]
+127.0.0.1 - - [22/Aug/2017:15:48:20 +0000] "GET /api.tws.com/v1/user/NAVEENKUMAR/contact?_=1503416843271 HTTP/1.1" 200 - "http://localhost:9090/ContactStoreWebApp/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36" 24
+In Impl
+JSONContactArr[["Naveen","kumar","23232980","naveen@gmail.com","street forth","met in the park"],["Matt","warney","23232980","matt@gmail.com","street forth","met in pub"],["matt","black","92372321321","matt.black@gmail.com","california North","met in conference"],["Richard","kelly","9739605605","naven88@gmail.com","2ND STREET","copy"]]
+127.0.0.1 - - [22/Aug/2017:15:49:34 +0000] "GET /api.tws.com/v1/user/NAVEENKUMAR/contact?_=1503416973247 HTTP/1.1" 200 - "http://localhost:9090/ContactStoreWebApp/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36" 76
+In Impl
+JSONContactArr[{"streetAddress":"street forth","lastName":"kumar","phone":"23232980","contactId":"1","email":"naveen@gmail.com","fullName":"Naveen kumar","notes":"met in the park","firstName":"Naveen"},{"streetAddress":"street forth","lastName":"warney","phone":"23232980","contactId":"2","email":"matt@gmail.com","fullName":"Matt warney","notes":"met in pub","firstName":"Matt"},{"streetAddress":"california North","lastName":"black","phone":"92372321321","contactId":"3","email":"matt.black@gmail.com","fullName":"matt black","notes":"met in conference","firstName":"matt"},{"streetAddress":"2ND STREET","lastName":"kelly","phone":"9739605605","contactId":"4","email":"naven88@gmail.com","fullName":"Richard kelly","notes":"copy","firstName":"Richard"}]
+127.0.0.1 - - [22/Aug/2017:15:49:36 +0000] "GET /api.tws.com/v1/user/naveenkumar/contact?pretty HTTP/1.1" 200 - "http://localhost:9090/ContactStoreWebApp/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36" 26
+INFO  [2017-08-22 15:49:45,188] com.tws.contactstore.storage.ContactStoreDaoImpl: Contacts IDs : 3 Removed
+127.0.0.1 - - [22/Aug/2017:15:49:45 +0000] "DELETE /api.tws.com/v1/user/naveenkumar/contact HTTP/1.1" 200 20 "http://localhost:9090/ContactStoreWebApp/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36" 15
+In Impl
+JSONContactArr[["Naveen","kumar","23232980","naveen@gmail.com","street forth","met in the park"],["Matt","warney","23232980","matt@gmail.com","street forth","met in pub"],["Richard","kelly","9739605605","naven88@gmail.com","2ND STREET","copy"]]
+127.0.0.1 - - [22/Aug/2017:15:50:48 +0000] "GET /api.tws.com/v1/user/NAVEENKUMAR/contact?_=1503417046714 HTTP/1.1" 200 239 "http://localhost:9090/ContactStoreWebApp/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36" 23
+In Impl
+JSONContactArr[{"streetAddress":"street forth","lastName":"kumar","phone":"23232980","contactId":"1","email":"naveen@gmail.com","fullName":"Naveen kumar","notes":"met in the park","firstName":"Naveen"},{"streetAddress":"street forth","lastName":"warney","phone":"23232980","contactId":"2","email":"matt@gmail.com","fullName":"Matt warney","notes":"met in pub","firstName":"Matt"},{"streetAddress":"2ND STREET","lastName":"kelly","phone":"9739605605","contactId":"4","email":"naven88@gmail.com","fullName":"Richard kelly","notes":"copy","firstName":"Richard"}]
+127.0.0.1 - - [22/Aug/2017:15:50:49 +0000] "GET /api.tws.com/v1/user/naveenkumar/contact?pretty HTTP/1.1" 200 - "http://localhost:9090/ContactStoreWebApp/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36" 36
+INFO  [2017-08-22 15:50:52,530] com.tws.contactstore.storage.ContactStoreDaoImpl: Contacts IDs : 2 Removed
+127.0.0.1 - - [22/Aug/2017:15:50:52 +0000] "DELETE /api.tws.com/v1/user/naveenkumar/contact HTTP/1.1" 200 20 "http://localhost:9090/ContactStoreWebApp/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36" 13
+In Impl
+JSONContactArr[["Naveen","kumar","23232980","naveen@gmail.com","street forth","met in the park"],["Richard","kelly","9739605605","naven88@gmail.com","2ND STREET","copy"]]
+127.0.0.1 - - [22/Aug/2017:15:51:53 +0000] "GET /api.tws.com/v1/user/NAVEENKUMAR/contact?_=1503417112463 HTTP/1.1" 200 165 "http://localhost:9090/ContactStoreWebApp/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36" 26
+INFO  [2017-08-22 15:52:11,670] com.tws.contactstore.storage.ContactStoreDaoImpl: For User: naveenkumar Contact:matt is Addded !
+127.0.0.1 - - [22/Aug/2017:15:52:11 +0000] "POST /api.tws.com/v1/user/naveenkumar/contact HTTP/1.1" 200 18 "http://localhost:9090/ContactStoreWebApp/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36" 20
+In Impl
+JSONContactArr[{"streetAddress":"street forth","lastName":"kumar","phone":"23232980","contactId":"1","email":"naveen@gmail.com","fullName":"Naveen kumar","notes":"met in the park","firstName":"Naveen"},{"streetAddress":"2ND STREET","lastName":"black","phone":"9739605605","contactId":"7","email":"naven88@gmail.com","fullName":"matt black","notes":"chicago","firstName":"matt"},{"streetAddress":"2ND STREET","lastName":"kelly","phone":"9739605605","contactId":"4","email":"naven88@gmail.com","fullName":"Richard kelly","notes":"copy","firstName":"Richard"}]
+127.0.0.1 - - [22/Aug/2017:15:52:14 +0000] "GET /api.tws.com/v1/user/naveenkumar/contact?pretty HTTP/1.1" 200 - "http://localhost:9090/ContactStoreWebApp/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36" 32
+INFO  [2017-08-22 15:52:20,124] com.tws.contactstore.storage.ContactStoreDaoImpl: Contacts IDs : 7 Removed
+127.0.0.1 - - [22/Aug/2017:15:52:20 +0000] "DELETE /api.tws.com/v1/user/naveenkumar/contact HTTP/1.1" 200 20 "http://localhost:9090/ContactStoreWebApp/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36" 13
+In Impl
+JSONContactArr[["Naveen","kumar","23232980","naveen@gmail.com","street forth","met in the park"],["Richard","kelly","9739605605","naven88@gmail.com","2ND STREET","copy"]]
+127.0.0.1 - - [22/Aug/2017:15:52:21 +0000] "GET /api.tws.com/v1/user/NAVEENKUMAR/contact?_=1503417112464 HTTP/1.1" 200 165 "http://localhost:9090/ContactStoreWebApp/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36" 21
+127.0.0.1 - - [22/Aug/2017:15:52:52 +0000] "OPTIONS /api.tws.com/v1/user/register HTTP/1.1" 200 13 "http://localhost:9090/ContactStoreWebApp/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36" 6
+INFO  [2017-08-22 15:52:52,627] com.tws.contactstore.storage.ContactStoreDaoImpl: User: Levi is Registered !
+127.0.0.1 - - [22/Aug/2017:15:52:52 +0000] "POST /api.tws.com/v1/user/register HTTP/1.1" 200 24 "http://localhost:9090/ContactStoreWebApp/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36" 20
+Username: levi, password: levi
+INFO  [2017-08-22 15:52:58,423] com.tws.contactstore.storage.ContactStoreDaoImpl: User levi Logged-In !
+Authenticate User: true
+127.0.0.1 - - [22/Aug/2017:15:52:58 +0000] "POST /api.tws.com/v1/user/authenticate HTTP/1.1" 200 4 "http://localhost:9090/ContactStoreWebApp/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36" 18
+In Impl
+JSONContactArr[]
+127.0.0.1 - - [22/Aug/2017:15:52:58 +0000] "GET /api.tws.com/v1/user/LEVI/contact?_=1503417112465 HTTP/1.1" 200 11 "http://localhost:9090/ContactStoreWebApp/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36" 19
+127.0.0.1 - - [22/Aug/2017:15:53:38 +0000] "OPTIONS /api.tws.com/v1/user/levi/contact HTTP/1.1" 200 32 "http://localhost:9090/ContactStoreWebApp/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36" 6
+INFO  [2017-08-22 15:53:38,105] com.tws.contactstore.storage.ContactStoreDaoImpl: For User: levi Contact:shiv is Addded !
+127.0.0.1 - - [22/Aug/2017:15:53:38 +0000] "POST /api.tws.com/v1/user/levi/contact HTTP/1.1" 200 18 "http://localhost:9090/ContactStoreWebApp/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36" 18
+In Impl
+JSONContactArr[["shiv","shiv","758898989","shiv@gmail.com","India","friend"]]
+127.0.0.1 - - [22/Aug/2017:15:53:40 +0000] "GET /api.tws.com/v1/user/LEVI/contact?_=1503417112466 HTTP/1.1" 200 72 "http://localhost:9090/ContactStoreWebApp/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36" 20
+Username: naveenkumar, password: naveen@123
+INFO  [2017-08-22 15:53:53,285] com.tws.contactstore.storage.ContactStoreDaoImpl: User naveenkumar Logged-In !
+Authenticate User: true
+127.0.0.1 - - [22/Aug/2017:15:53:53 +0000] "POST /api.tws.com/v1/user/authenticate HTTP/1.1" 200 4 "http://localhost:9090/ContactStoreWebApp/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36" 12
+In Impl
+JSONContactArr[["Naveen","kumar","23232980","naveen@gmail.com","street forth","met in the park"],["Richard","kelly","9739605605","naven88@gmail.com","2ND STREET","copy"]]
+127.0.0.1 - - [22/Aug/2017:15:53:53 +0000] "GET /api.tws.com/v1/user/NAVEENKUMAR/contact?_=1503417112467 HTTP/1.1" 200 165 "http://localhost:9090/ContactStoreWebApp/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36" 22
+Username: levi, password: levi
+INFO  [2017-08-22 15:54:01,634] com.tws.contactstore.storage.ContactStoreDaoImpl: User levi Logged-In !
+Authenticate User: true
+127.0.0.1 - - [22/Aug/2017:15:54:01 +0000] "POST /api.tws.com/v1/user/authenticate HTTP/1.1" 200 4 "http://localhost:9090/ContactStoreWebApp/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36" 13
+In Impl
+JSONContactArr[["shiv","shiv","758898989","shiv@gmail.com","India","friend"]]
+127.0.0.1 - - [22/Aug/2017:15:54:01 +0000] "GET /api.tws.com/v1/user/LEVI/contact?_=1503417112468 HTTP/1.1" 200 72 "http://localhost:9090/ContactStoreWebApp/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36" 19
+In Impl
+JSONContactArr[{"streetAddress":"India","lastName":"shiv","phone":"758898989","contactId":"8","email":"shiv@gmail.com","fullName":"shiv shiv","notes":"friend","firstName":"shiv"}]
+127.0.0.1 - - [22/Aug/2017:15:54:06 +0000] "GET /api.tws.com/v1/user/levi/contact?pretty HTTP/1.1" 200 165 "http://localhost:9090/ContactStoreWebApp/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36" 26
+In Impl
+JSONContactArr[["shiv","shiv","758898989","shiv@gmail.com","India","friend"]]
+127.0.0.1 - - [22/Aug/2017:15:54:07 +0000] "GET /api.tws.com/v1/user/LEVI/contact?_=1503417112469 HTTP/1.1" 200 72 "http://localhost:9090/ContactStoreWebApp/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36" 20
+127.0.0.1 - - [22/Aug/2017:15:59:58 +0000] "OPTIONS /api.tws.com/v1/user/authenticate HTTP/1.1" 200 13 "http://localhost:8080/ContactStoreWebApp/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36" 6
+Username: naveenkumar, password: naveen
+INFO  [2017-08-22 15:59:58,467] com.tws.contactstore.storage.ContactStoreDaoImpl: User naveenkumar Logged-In !
+Authenticate User: false
+127.0.0.1 - - [22/Aug/2017:15:59:58 +0000] "POST /api.tws.com/v1/user/authenticate HTTP/1.1" 401 5 "http://localhost:8080/ContactStoreWebApp/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36" 13
+Username: naveenkumar, password: naveen@123
+Authenticate User: true
+INFO  [2017-08-22 16:00:07,584] com.tws.contactstore.storage.ContactStoreDaoImpl: User naveenkumar Logged-In !
+127.0.0.1 - - [22/Aug/2017:16:00:07 +0000] "POST /api.tws.com/v1/user/authenticate HTTP/1.1" 200 4 "http://localhost:8080/ContactStoreWebApp/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36" 19
+In Impl
+JSONContactArr[["Naveen","kumar","23232980","naveen@gmail.com","street forth","met in the park"],["Richard","kelly","9739605605","naven88@gmail.com","2ND STREET","copy"]]
+127.0.0.1 - - [22/Aug/2017:16:00:07 +0000] "GET /api.tws.com/v1/user/NAVEENKUMAR/contact?_=1503417588883 HTTP/1.1" 200 165 "http://localhost:8080/ContactStoreWebApp/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36" 38
+In Impl
+JSONContactArr[{"streetAddress":"street forth","lastName":"kumar","phone":"23232980","contactId":"1","email":"naveen@gmail.com","fullName":"Naveen kumar","notes":"met in the park","firstName":"Naveen"},{"streetAddress":"2ND STREET","lastName":"kelly","phone":"9739605605","contactId":"4","email":"naven88@gmail.com","fullName":"Richard kelly","notes":"copy","firstName":"Richard"}]
+127.0.0.1 - - [22/Aug/2017:16:00:11 +0000] "GET /api.tws.com/v1/user/naveenkumar/contact?pretty HTTP/1.1" 200 - "http://localhost:8080/ContactStoreWebApp/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36" 13
+In Impl
+JSONContactArr[["Naveen","kumar","23232980","naveen@gmail.com","street forth","met in the park"],["Richard","kelly","9739605605","naven88@gmail.com","2ND STREET","copy"]]
+127.0.0.1 - - [22/Aug/2017:16:00:14 +0000] "GET /api.tws.com/v1/user/NAVEENKUMAR/contact?_=1503417588884 HTTP/1.1" 200 165 "http://localhost:8080/ContactStoreWebApp/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36" 24

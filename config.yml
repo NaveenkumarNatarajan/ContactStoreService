@@ -1,0 +1,15 @@
+dataSource:
+  db_Server_IP_Address: localhost
+  userName: root
+  password: admin
+  database: contact_store
+  url: jdbc:mysql://localhost:3306/contact_store
+  driver: com.mysql.jdbc.Driver
+
+server:
+  applicationConnectors:
+    - type: http
+      port: 7777
+  adminConnectors:
+    - type: http
+      port: 7778

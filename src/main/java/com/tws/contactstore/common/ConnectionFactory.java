@@ -1,9 +1,3 @@
-/*
- * Version 1.0
- * 15-12-2014
- * Copyright (C) Slice - All Rights Reserved
- * Unauthorized copying of this file, via any medium is strictly prohibited
- */
 package com.tws.contactstore.common;
 
 import java.sql.Connection;
